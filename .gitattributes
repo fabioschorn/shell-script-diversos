@@ -1,0 +1,8 @@
+*	text=auto
+
+# These files should have specific line endings
+examples/*.sh	text eol=lf
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.bin	binary
