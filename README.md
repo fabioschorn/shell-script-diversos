@@ -1,3 +1,3 @@
 # SHELL SCRIPT Miscellaneous
 
-Este repositório é um conjunto de Shell Script for kids.
+This repository is a set of Shell Scripts for kids.
