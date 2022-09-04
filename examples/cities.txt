@@ -2,4 +2,6 @@ tokyo
 athens
 lodon
 nyc
+bern
+saopaulo
 poa
