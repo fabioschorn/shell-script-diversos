@@ -21,10 +21,9 @@ echo "Looking for log4j configuration files in Jenkins home..."
 find "$JENKINS_HOME" -type f -name "log4j*.properties" -or -name "log4j*.xml" && echo "Found log4j configuration files." || echo "No log4j configuration files found."
 
 # Check for Java processes using log4j
-echo "Checking Java processes for log4j usage..."
-for pid in $(pgrep -f 'jenkins.war'); do
-    echo "Checking Java process ID: $pid for log4j usage..."
-    jcmd $pid VM.system_properties | grep 'log4j' && echo "Log4j properties found in process $pid." || echo "No log4j properties in process $pid."
+echo "Checking for Java processes using log4j..."
+for pid in $(pgrep -f 'java'); do
+    ls -l /proc/$pid/fd | grep -i 'log4j' && echo "Java process $pid is using log4j."
 done
 
-echo "Check complete."
+echo "Log4j check complete."
